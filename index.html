@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>מושיקו ביטוח ופיננסים — ייעוץ פיננסי אישי</title>
+<meta name="description" content="מושיקו ביטוח ופיננסים — ליווי אישי בביטוח, פנסיה, קרנות והשקעות. שקט נפשי אמיתי, בגובה העיניים.">
+
+<!-- ============ הגדרות מהירות: החלף כאן שם / טלפון / וואטסאפ / מייל ============ -->
+<!-- כל הכפתורים והקישורים מתעדכנים אוטומטית מהערכים למטה -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --navy:#16233d;
+  --navy-2:#1e3054;
+  --steel:#3f5f8f;
+  --blue:#5b81b5;
+  --blue-soft:#8fa9cc;
+  --ice:#dbe5f1;
+  --paper:#f6f8fc;
+  --white:#ffffff;
+  --ink:#1b2436;
+  --muted:#5d6b82;
+  --line:rgba(22,35,61,.10);
+  --shadow:0 18px 50px -20px rgba(22,35,61,.35);
+  --shadow-sm:0 8px 24px -12px rgba(22,35,61,.28);
+  --radius:22px;
+  --radius-sm:14px;
+  --grad:linear-gradient(135deg,#1e3054 0%,#3f5f8f 55%,#5b81b5 100%);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Heebo',system-ui,-apple-system,sans-serif;
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.6;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.wrap{width:min(1160px,92%);margin-inline:auto}
+section{position:relative}
+.eyebrow{
+  display:inline-block;font-weight:700;font-size:.82rem;letter-spacing:.14em;
+  color:var(--blue);text-transform:uppercase;margin-bottom:14px;
+}
+h2.title{font-size:clamp(1.7rem,4.2vw,2.7rem);font-weight:800;color:var(--navy);line-height:1.2;letter-spacing:-.01em}
+.lead{color:var(--muted);font-size:clamp(1rem,2.2vw,1.15rem);max-width:620px}
+
+/* ---------- BUTTONS ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:10px;font-family:inherit;
+  font-weight:700;font-size:1.02rem;padding:15px 30px;border-radius:999px;
+  border:none;cursor:pointer;transition:.28s cubic-bezier(.2,.7,.3,1);white-space:nowrap;
+}
+.btn svg{width:20px;height:20px}
+.btn-primary{background:var(--grad);color:#fff;box-shadow:0 14px 30px -12px rgba(30,48,84,.65)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 22px 40px -14px rgba(30,48,84,.7)}
+.btn-wa{background:#25D366;color:#fff;box-shadow:0 14px 30px -12px rgba(37,211,102,.6)}
+.btn-wa:hover{transform:translateY(-3px);box-shadow:0 22px 40px -14px rgba(37,211,102,.7)}
+.btn-ghost{background:rgba(255,255,255,.7);color:var(--navy);border:1.5px solid var(--line);backdrop-filter:blur(6px)}
+.btn-ghost:hover{background:#fff;transform:translateY(-3px)}
+
+/* ---------- HEADER ---------- */
+header{
+  position:fixed;inset:0 0 auto 0;z-index:50;transition:.3s;
+  padding:18px 0;
+}
+header.scrolled{background:rgba(246,248,252,.9);backdrop-filter:blur(14px);box-shadow:0 6px 22px -16px rgba(22,35,61,.5);padding:11px 0}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand .logo-mark{height:46px;width:auto;transition:.3s}
+header.scrolled .brand .logo-mark{height:40px}
+.brand .brand-text{display:flex;flex-direction:column;line-height:1.05}
+.brand .brand-text b{font-weight:800;font-size:1.05rem;color:var(--navy);letter-spacing:.02em}
+.brand .brand-text span{font-size:.72rem;color:var(--muted);letter-spacing:.22em}
+.nav-links{display:flex;gap:30px;align-items:center}
+.nav-links a{font-weight:500;color:var(--navy);font-size:.98rem;transition:.2s;position:relative}
+.nav-links a::after{content:"";position:absolute;bottom:-6px;right:0;width:0;height:2px;background:var(--blue);transition:.25s}
+.nav-links a:hover::after{width:100%}
+.nav .btn{padding:11px 22px;font-size:.92rem}
+.menu-toggle{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:8px}
+.menu-toggle span{width:24px;height:2.5px;background:var(--navy);border-radius:2px;transition:.3s}
+
+/* ---------- HERO ---------- */
+.hero{
+  min-height:100vh;display:flex;align-items:center;padding-top:120px;padding-bottom:70px;
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(143,169,204,.35), transparent 45%),
+    radial-gradient(circle at 88% 12%, rgba(91,129,181,.28), transparent 42%),
+    radial-gradient(circle at 75% 88%, rgba(30,48,84,.18), transparent 45%),
+    linear-gradient(160deg,#eef3f9 0%,#dbe5f1 100%);
+}
+.hero .blob{position:absolute;border-radius:50%;filter:blur(60px);opacity:.5;pointer-events:none}
+.hero .b1{width:420px;height:420px;background:#8fa9cc;top:-120px;right:-80px}
+.hero .b2{width:340px;height:340px;background:#5b81b5;bottom:-100px;left:-60px;opacity:.35}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center;position:relative;z-index:2}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.75);
+  border:1px solid var(--line);padding:8px 16px;border-radius:999px;font-size:.85rem;
+  font-weight:600;color:var(--steel);margin-bottom:22px;box-shadow:var(--shadow-sm);
+}
+.hero-badge .dot{width:8px;height:8px;border-radius:50%;background:#25D366;box-shadow:0 0 0 4px rgba(37,211,102,.2)}
+.hero h1{
+  font-size:clamp(2.1rem,5.5vw,3.7rem);font-weight:900;color:var(--navy);
+  line-height:1.12;letter-spacing:-.02em;margin-bottom:20px;
+}
+.hero h1 .accent{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.sub{font-size:clamp(1.05rem,2.4vw,1.28rem);color:var(--muted);max-width:540px;margin-bottom:34px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:36px}
+.hero-trust{display:flex;gap:26px;flex-wrap:wrap}
+.hero-trust .t{display:flex;flex-direction:column}
+.hero-trust .t b{font-size:1.5rem;font-weight:800;color:var(--navy)}
+.hero-trust .t span{font-size:.82rem;color:var(--muted)}
+
+.hero-visual{position:relative;display:flex;justify-content:center;align-items:center}
+.hero-card{
+  background:rgba(255,255,255,.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.7);
+  border-radius:28px;padding:38px 34px;box-shadow:var(--shadow);width:100%;max-width:380px;text-align:center;
+}
+.hero-card .logo-big{width:180px;margin:0 auto 8px}
+.hero-card .heart{font-size:2rem;margin:6px 0}
+.hero-card h3{font-size:1.3rem;color:var(--navy);font-weight:800;margin-bottom:8px}
+.hero-card p{font-size:.95rem;color:var(--muted);margin-bottom:20px}
+.hero-card .mini{display:flex;justify-content:space-around;padding-top:18px;border-top:1px solid var(--line)}
+.hero-card .mini div b{display:block;font-size:1.15rem;color:var(--steel);font-weight:800}
+.hero-card .mini div span{font-size:.72rem;color:var(--muted)}
+
+/* ---------- SERVICES ---------- */
+.services{padding:100px 0}
+.sec-head{text-align:center;margin-bottom:56px;display:flex;flex-direction:column;align-items:center}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.card{
+  background:var(--white);border-radius:var(--radius);padding:30px 26px;border:1px solid var(--line);
+  transition:.32s cubic-bezier(.2,.7,.3,1);position:relative;overflow:hidden;
+}
+.card::before{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:var(--grad);transform:scaleX(0);transform-origin:right;transition:.35s}
+.card:hover{transform:translateY(-8px);box-shadow:var(--shadow);border-color:transparent}
+.card:hover::before{transform:scaleX(1)}
+.card .ico{
+  width:56px;height:56px;border-radius:16px;display:grid;place-items:center;font-size:1.7rem;
+  background:linear-gradient(135deg,#eef3f9,#dbe5f1);margin-bottom:18px;transition:.32s;
+}
+.card:hover .ico{background:var(--grad);transform:rotate(-6deg) scale(1.06)}
+.card h3{font-size:1.18rem;font-weight:800;color:var(--navy);margin-bottom:8px}
+.card p{font-size:.94rem;color:var(--muted);line-height:1.55}
+
+/* ---------- WHY ---------- */
+.why{padding:100px 0;background:linear-gradient(180deg,#fff,#f0f4fa)}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.why-list{display:flex;flex-direction:column;gap:22px}
+.why-item{display:flex;gap:16px;align-items:flex-start}
+.why-item .check{flex:none;width:44px;height:44px;border-radius:12px;background:var(--grad);display:grid;place-items:center;color:#fff}
+.why-item .check svg{width:22px;height:22px}
+.why-item h4{font-size:1.12rem;color:var(--navy);font-weight:800;margin-bottom:3px}
+.why-item p{font-size:.95rem;color:var(--muted)}
+.why-visual{background:var(--grad);border-radius:32px;padding:50px 40px;color:#fff;position:relative;overflow:hidden;box-shadow:var(--shadow)}
+.why-visual::after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,.08);bottom:-90px;left:-60px}
+.why-visual .qmark{font-size:3.5rem;opacity:.25;line-height:1}
+.why-visual blockquote{font-size:1.35rem;font-weight:700;line-height:1.5;margin:14px 0 26px}
+.why-visual .who{display:flex;align-items:center;gap:12px}
+.why-visual .who .av{width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.2);display:grid;place-items:center;font-weight:800;font-size:1.1rem}
+.why-visual .who b{display:block}
+.why-visual .who span{font-size:.85rem;opacity:.8}
+
+/* ---------- STEPS ---------- */
+.steps{padding:100px 0}
+.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:50px}
+.step{text-align:center;padding:34px 26px;background:var(--white);border-radius:var(--radius);border:1px solid var(--line);position:relative}
+.step .num{width:58px;height:58px;margin:0 auto 18px;border-radius:50%;background:var(--grad);color:#fff;display:grid;place-items:center;font-weight:900;font-size:1.4rem;box-shadow:var(--shadow-sm)}
+.step h4{font-size:1.15rem;color:var(--navy);font-weight:800;margin-bottom:8px}
+.step p{font-size:.93rem;color:var(--muted)}
+
+/* ---------- CTA / CONTACT ---------- */
+.contact{padding:100px 0}
+.contact-box{
+  background:var(--grad);border-radius:36px;padding:60px;display:grid;grid-template-columns:1fr 1fr;gap:50px;
+  align-items:center;position:relative;overflow:hidden;box-shadow:var(--shadow);color:#fff;
+}
+.contact-box::before{content:"";position:absolute;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,.08);top:-100px;right:-80px}
+.contact-info{position:relative;z-index:2}
+.contact-info h2{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:900;line-height:1.2;margin-bottom:16px}
+.contact-info p{opacity:.9;font-size:1.05rem;margin-bottom:28px;max-width:420px}
+.contact-info .clist{display:flex;flex-direction:column;gap:14px}
+.contact-info .cl{display:flex;align-items:center;gap:12px;font-weight:500}
+.contact-info .cl svg{width:20px;height:20px;flex:none}
+form{background:rgba(255,255,255,.97);border-radius:24px;padding:32px;position:relative;z-index:2}
+form h3{color:var(--navy);font-weight:800;font-size:1.3rem;margin-bottom:6px}
+form .fsub{color:var(--muted);font-size:.9rem;margin-bottom:20px}
+.field{margin-bottom:15px}
+.field label{display:block;font-size:.85rem;font-weight:600;color:var(--navy);margin-bottom:6px}
+.field input,.field select,.field textarea{
+  width:100%;padding:13px 15px;border:1.5px solid var(--line);border-radius:12px;font-family:inherit;
+  font-size:.98rem;color:var(--ink);background:#fbfcfe;transition:.2s;
+}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--blue);background:#fff;box-shadow:0 0 0 4px rgba(91,129,181,.12)}
+form .btn{width:100%;justify-content:center;margin-top:6px}
+form .privacy{font-size:.75rem;color:var(--muted);text-align:center;margin-top:12px}
+
+/* ---------- FOOTER ---------- */
+footer{background:var(--navy);color:#c3cede;padding:56px 0 28px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:36px}
+footer .brand .brand-text b{color:#fff}
+footer .brand .brand-text span{color:#8fa9cc}
+footer p.about{margin-top:16px;font-size:.92rem;line-height:1.7;opacity:.8;max-width:340px}
+footer h5{color:#fff;font-weight:700;margin-bottom:16px;font-size:1rem}
+footer ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+footer ul a{font-size:.92rem;opacity:.8;transition:.2s}
+footer ul a:hover{opacity:1;color:#fff}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:22px;text-align:center;font-size:.82rem;opacity:.6}
+
+/* ---------- FLOATING WA ---------- */
+.wa-float{
+  position:fixed;bottom:24px;left:24px;z-index:60;width:60px;height:60px;border-radius:50%;
+  background:#25D366;display:grid;place-items:center;box-shadow:0 12px 28px -8px rgba(37,211,102,.6);
+  transition:.3s;animation:pulse 2.4s infinite;
+}
+.wa-float:hover{transform:scale(1.08)}
+.wa-float svg{width:32px;height:32px;fill:#fff}
+@keyframes pulse{0%{box-shadow:0 12px 28px -8px rgba(37,211,102,.6),0 0 0 0 rgba(37,211,102,.5)}70%{box-shadow:0 12px 28px -8px rgba(37,211,102,.6),0 0 0 16px rgba(37,211,102,0)}100%{box-shadow:0 12px 28px -8px rgba(37,211,102,.6),0 0 0 0 rgba(37,211,102,0)}}
+
+/* ---------- REVEAL ---------- */
+.reveal{opacity:0;transform:translateY(28px);transition:.7s cubic-bezier(.2,.7,.3,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:960px){
+  .hero-grid{grid-template-columns:1fr;gap:36px;text-align:center}
+  .hero p.sub{margin-inline:auto}
+  .hero-cta,.hero-trust{justify-content:center}
+  .hero-visual{order:-1}
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .why-grid{grid-template-columns:1fr;gap:40px}
+  .steps-grid{grid-template-columns:1fr}
+  .contact-box{grid-template-columns:1fr;padding:40px 28px}
+  .foot-grid{grid-template-columns:1fr;gap:28px}
+  .nav-links{display:none}
+  .nav-links.open{
+    display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;
+    background:#fff;padding:20px;gap:16px;box-shadow:var(--shadow);border-radius:0 0 18px 18px;
+  }
+  .menu-toggle{display:flex}
+  .nav>.btn{display:none}
+}
+@media(max-width:520px){
+  .grid{grid-template-columns:1fr}
+  .hero-trust{gap:18px}
+  .contact-box{padding:32px 20px}
+  form{padding:24px}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header id="header">
+  <div class="wrap nav">
+    <a href="#" class="brand">
+      <img src="logo.png" alt="M|S ביטוח ופיננסים" class="logo-mark"
+           onerror="this.outerHTML=document.getElementById('svglogo').innerHTML">
+      <div class="brand-text">
+        <b>מושיקו</b><span>ביטוח ופיננסים</span>
+      </div>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#services">השירותים</a>
+      <a href="#why">למה אני</a>
+      <a href="#steps">איך זה עובד</a>
+      <a href="#contact">צור קשר</a>
+    </nav>
+    <a href="#contact" class="btn btn-primary">לתיאום פגישה</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="תפריט"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- inline SVG fallback logo -->
+<template id="svglogo">
+  <svg class="logo-mark" viewBox="0 0 130 60" xmlns="http://www.w3.org/2000/svg" aria-label="M|S">
+    <text x="6" y="46" font-family="Georgia,'Times New Roman',serif" font-size="50" font-weight="700" fill="#16233d">M</text>
+    <rect x="60" y="8" width="2" height="46" fill="#5b81b5"/>
+    <text x="70" y="46" font-family="Georgia,'Times New Roman',serif" font-size="50" font-weight="700" fill="#16233d">S</text>
+  </svg>
+</template>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div>
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <span class="hero-badge"><span class="dot"></span>זמין לייעוץ ראשוני ללא עלות</span>
+      <h1>שקט נפשי אמיתי<br>מתחיל ב<span class="accent">ליווי פיננסי</span> נכון</h1>
+      <p class="sub">ביטוח, פנסיה, קרנות והשקעות — הכול במקום אחד, בגובה העיניים ובהתאמה אישית מלאה. אני דואג שתהיו מכוסים בדיוק במה שחשוב, ותשלמו רק על מה שצריך.</p>
+      <div class="hero-cta">
+        <a class="btn btn-wa" data-wa href="#">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.4-.1-.6.1s-.7.9-.8 1.1c-.2.2-.3.2-.6.1-1.6-.8-2.7-1.5-3.7-3.4-.3-.5.3-.5.8-1.5.1-.2 0-.3 0-.5s-.6-1.6-.9-2.1c-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.9.9-1 2.2-.5 3.3.9 2 2 2.8 3.9 4 .5.3 1.6.7 2.5.8.5 0 1-.1 1.4-.4.4-.3.9-1 1-1.4.1-.4.1-.7 0-.8-.1-.1-.2-.1-.5-.3zM12 2a10 10 0 00-8.6 15l-1.4 5 5.2-1.4A10 10 0 1012 2z"/></svg>
+          שלח לי הודעה בוואטסאפ
+        </a>
+        <a class="btn btn-ghost" data-tel href="#">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.6A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.6a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.5-1.1a2 2 0 012.1-.5c.8.3 1.7.5 2.6.6a2 2 0 011.7 2z"/></svg>
+          חייגו עכשיו
+        </a>
+      </div>
+      <div class="hero-trust">
+        <div class="t"><b>8+</b><span>תחומי ליווי</span></div>
+        <div class="t"><b>100%</b><span>התאמה אישית</span></div>
+        <div class="t"><b>0₪</b><span>ייעוץ ראשוני</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card reveal">
+        <img src="logo.png" alt="M|S" class="logo-big"
+             onerror="this.outerHTML='<div style=&quot;text-align:center;margin:6px auto 4px&quot;><div style=&quot;font-family:Georgia,serif;font-size:3.6rem;font-weight:700;color:#16233d;line-height:1&quot;>M<span style=&quot;color:#5b81b5;font-weight:400&quot;>&#160;|&#160;</span>S</div><div style=&quot;font-size:.66rem;letter-spacing:.34em;color:#3f5f8f;font-weight:700;margin-top:6px&quot;>INSURANCE &amp; FINANCES</div></div>'">
+        <div class="heart">🤍</div>
+        <h3>הכסף שלכם, בידיים בטוחות</h3>
+        <p>ליווי מקצועי ואישי לאורך כל הדרך — כי אחריכם עומדים אנשים, לא רק מספרים.</p>
+        <div class="mini">
+          <div><b>אמינות</b><span>שקיפות מלאה</span></div>
+          <div><b>זמינות</b><span>מענה מהיר</span></div>
+          <div><b>מקצועיות</b><span>ידע מעודכן</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">מה אני מציע</span>
+      <h2 class="title">כל הפתרונות הפיננסיים שלכם — במקום אחד</h2>
+      <p class="lead" style="margin-top:14px">מביטוחים שמגנים על מה שיקר לכם, ועד תכנון חכם של העתיד הכלכלי. בחרו את התחום שמעניין אתכם.</p>
+    </div>
+    <div class="grid">
+      <div class="card reveal"><div class="ico">🚗</div><h3>ביטוח רכב</h3><p>שנייה אחת על הכביש משנה הכול — כיסוי מלא שנותן לכם ראש שקט בכל נסיעה.</p></div>
+      <div class="card reveal"><div class="ico">🏥</div><h3>ביטוח בריאות</h3><p>כי כשהבריאות נפגעת — הכיסוי הנכון עושה את כל ההבדל בין דאגה לשקט.</p></div>
+      <div class="card reveal"><div class="ico">🏡</div><h3>ביטוח חיים למשכנתא</h3><p>הבית הוא החלום — נדאג שהוא יישאר בידי המשפחה בכל תרחיש.</p></div>
+      <div class="card reveal"><div class="ico">✈️</div><h3>ביטוח נסיעות לחו״ל</h3><p>תקלה קטנה בחו״ל = הוצאה גדולה. תיסעו רגועים, אנחנו מכסים.</p></div>
+      <div class="card reveal"><div class="ico">🌅</div><h3>קרן פנסיה</h3><p>היכולת לבחור איך ייראה המחר שלכם — תכנון פנסיוני חכם ומשתלם.</p></div>
+      <div class="card reveal"><div class="ico">🎓</div><h3>קרן השתלמות</h3><p>הרבה מעבר לחיסכון — מנוע צמיחה חכם לקריירה ולכסף שלכם.</p></div>
+      <div class="card reveal"><div class="ico">💸</div><h3>קרן גמל להשקעה</h3><p>לא רק לחסוך — לדעת להשקיע. תנו לכסף שלכם לעבוד בשבילכם.</p></div>
+      <div class="card reveal"><div class="ico">🛡️</div><h3>ביטוח חיים</h3><p>לא עוד פוליסה — אלא שקט נפשי אמיתי לכם ולמי שאתם אוהבים.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY ================= -->
+<section class="why" id="why">
+  <div class="wrap why-grid">
+    <div class="reveal">
+      <span class="eyebrow">למה לבחור בי</span>
+      <h2 class="title" style="margin-bottom:30px">יחס אישי שמרגישים בו את ההבדל</h2>
+      <div class="why-list">
+        <div class="why-item">
+          <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>
+          <div><h4>ליווי אישי, לא מוקד</h4><p>אתם מדברים איתי ישירות — אותו איש קשר, מההתחלה ועד סוף הדרך.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>
+          <div><h4>התאמה מדויקת לצרכים</h4><p>לא חבילות גנריות — פתרון שנתפר בדיוק למצב ולתקציב שלכם.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>
+          <div><h4>שקיפות מלאה</h4><p>אתם יודעים בדיוק על מה אתם משלמים ולמה — בלי אותיות קטנות.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>
+          <div><h4>חיסכון אמיתי בכיס</h4><p>בדיקת כדאיות שוטפת שמוודאת שאתם תמיד בתנאים הכי טובים בשוק.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="why-visual reveal">
+      <div class="qmark">”</div>
+      <blockquote>המטרה שלי פשוטה: שתישנו בשקט בלילה, מתוך ידיעה שהכול מסודר, מכוסה ומתוכנן נכון.</blockquote>
+      <div class="who">
+        <div class="av">M<span style="opacity:.5">|</span>S</div>
+        <div><b>מושיקו</b><span>ביטוח ופיננסים</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STEPS ================= -->
+<section class="steps" id="steps">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">התהליך</span>
+      <h2 class="title">3 צעדים פשוטים לשקט נפשי</h2>
+    </div>
+    <div class="steps-grid">
+      <div class="step reveal"><div class="num">1</div><h4>שיחת היכרות</h4><p>נשב יחד (טלפונית או פרונטלית), אבין את הצרכים והמטרות שלכם — ללא עלות וללא התחייבות.</p></div>
+      <div class="step reveal"><div class="num">2</div><h4>תוכנית מותאמת</h4><p>אבנה עבורכם תמונת מצב מלאה והמלצות ברורות, עם השוואת מחירים ותנאים אמיתית.</p></div>
+      <div class="step reveal"><div class="num">3</div><h4>יישום וליווי</h4><p>אטפל בכל הבירוקרטיה, ואמשיך ללוות אתכם לאורך זמן — כי החיים משתנים והתוכנית איתם.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="contact-box reveal">
+      <div class="contact-info">
+        <h2>מוכנים לעשות סדר בכספים?</h2>
+        <p>השאירו פרטים ואחזור אליכם בהקדם לשיחת ייעוץ ראשונית — ללא עלות וללא התחייבות.</p>
+        <div class="clist">
+          <a class="cl" data-tel href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.6A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.6a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.5-1.1a2 2 0 012.1-.5c.8.3 1.7.5 2.6.6a2 2 0 011.7 2z"/></svg><span data-phone-text>050-000-0000</span></a>
+          <a class="cl" data-wa href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.4-.1-.6.1s-.7.9-.8 1.1c-.2.2-.3.2-.6.1-1.6-.8-2.7-1.5-3.7-3.4-.3-.5.3-.5.8-1.5.1-.2 0-.3 0-.5s-.6-1.6-.9-2.1c-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.9.9-1 2.2-.5 3.3.9 2 2 2.8 3.9 4 .5.3 1.6.7 2.5.8.5 0 1-.1 1.4-.4.4-.3.9-1 1-1.4.1-.4.1-.7 0-.8-.1-.1-.2-.1-.5-.3zM12 2a10 10 0 00-8.6 15l-1.4 5 5.2-1.4A10 10 0 1012 2z"/></svg><span>וואטסאפ ישיר</span></a>
+          <a class="cl" data-mail href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 6L2 7"/></svg><span data-mail-text>info@example.co.il</span></a>
+        </div>
+      </div>
+      <form id="leadForm" onsubmit="return submitLead(event)">
+        <h3>קבעו שיחת ייעוץ</h3>
+        <p class="fsub">נחזור אליכם תוך יום עסקים אחד</p>
+        <div class="field"><label>שם מלא</label><input type="text" name="name" required placeholder="ישראל ישראלי"></div>
+        <div class="field"><label>טלפון</label><input type="tel" name="phone" required placeholder="050-0000000"></div>
+        <div class="field"><label>מה מעניין אתכם?</label>
+          <select name="topic">
+            <option>ביטוח רכב</option><option>ביטוח בריאות</option><option>ביטוח חיים למשכנתא</option>
+            <option>ביטוח נסיעות לחו״ל</option><option>קרן פנסיה</option><option>קרן השתלמות</option>
+            <option>קרן גמל להשקעה</option><option>ביטוח חיים</option><option>ייעוץ כללי / לא בטוח</option>
+          </select>
+        </div>
+        <div class="field"><label>הודעה (לא חובה)</label><textarea name="msg" rows="2" placeholder="ספרו לי בקצרה..."></textarea></div>
+        <button type="submit" class="btn btn-primary">שליחה וקבלת שיחה 📞</button>
+        <p class="privacy">🔒 הפרטים נשמרים בדיסקרטיות מלאה ולא מועברים לצד ג׳</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a href="#" class="brand">
+          <img src="logo.png" alt="M|S" class="logo-mark" style="height:44px"
+               onerror="this.style.display='none'">
+          <div class="brand-text"><b>מושיקו</b><span>ביטוח ופיננסים</span></div>
+        </a>
+        <p class="about">ליווי פיננסי אישי ומקצועי בביטוח, פנסיה, קרנות והשקעות. כי אחרי כל מספר עומדים אנשים — ואתם במרכז.</p>
+      </div>
+      <div>
+        <h5>שירותים</h5>
+        <ul>
+          <li><a href="#services">ביטוחים</a></li>
+          <li><a href="#services">קרנות פנסיה</a></li>
+          <li><a href="#services">חיסכון והשקעות</a></li>
+          <li><a href="#services">קרן השתלמות</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>יצירת קשר</h5>
+        <ul>
+          <li><a data-tel href="#"><span data-phone-text>050-000-0000</span></a></li>
+          <li><a data-wa href="#">וואטסאפ</a></li>
+          <li><a data-mail href="#"><span data-mail-text>info@example.co.il</span></a></li>
+          <li><a href="#contact">קביעת פגישה</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">© <span id="year"></span> מושיקו ביטוח ופיננסים · כל הזכויות שמורות · נבנה באהבה 🤍</div>
+  </div>
+</footer>
+
+<!-- floating whatsapp -->
+<a class="wa-float" data-wa href="#" aria-label="וואטסאפ">
+  <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.4-.1-.6.1s-.7.9-.8 1.1c-.2.2-.3.2-.6.1-1.6-.8-2.7-1.5-3.7-3.4-.3-.5.3-.5.8-1.5.1-.2 0-.3 0-.5s-.6-1.6-.9-2.1c-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.9.9-1 2.2-.5 3.3.9 2 2 2.8 3.9 4 .5.3 1.6.7 2.5.8.5 0 1-.1 1.4-.4.4-.3.9-1 1-1.4.1-.4.1-.7 0-.8-.1-.1-.2-.1-.5-.3zM12 2a10 10 0 00-8.6 15l-1.4 5 5.2-1.4A10 10 0 1012 2z"/></svg>
+</a>
+
+<script>
+/* ====================================================================
+   ⚙️  הגדרות — ערוך רק את הבלוק הזה (שם, טלפון, וואטסאפ, מייל)
+   ==================================================================== */
+const CONFIG = {
+  advisorName : "מושיקו",                      // שם היועץ
+  phone       : "054-979-9558",                // טלפון לתצוגה
+  phoneDial   : "054-979-9558",                // טלפון לחיוג (ספרות)
+  whatsapp    : "972549799558",                // וואטסאפ בפורמט בינ״ל (972...)
+  email       : "",                            // אימייל (ריק = מוסתר)
+  waMessage   : "היי מושיקו, הגעתי דרך האתר ואשמח לשמוע פרטים על ייעוץ פיננסי 🙂"
+};
+/* ==================================================================== */
+
+(function(){
+  const waLink = "https://wa.me/"+CONFIG.whatsapp+"?text="+encodeURIComponent(CONFIG.waMessage);
+  document.querySelectorAll('[data-wa]').forEach(el=>el.href=waLink);
+  const telHref = "tel:+972"+CONFIG.phoneDial.replace(/[^0-9]/g,'').replace(/^0/,'');
+  document.querySelectorAll('[data-tel]').forEach(el=>el.href=telHref);
+  document.querySelectorAll('[data-phone-text]').forEach(el=>el.textContent=CONFIG.phone);
+  if(CONFIG.email){
+    document.querySelectorAll('[data-mail]').forEach(el=>el.href="mailto:"+CONFIG.email);
+    document.querySelectorAll('[data-mail-text]').forEach(el=>el.textContent=CONFIG.email);
+  } else {
+    // אין אימייל עדיין — מסתיר את השורות הרלוונטיות
+    document.querySelectorAll('[data-mail]').forEach(el=>{const li=el.closest('li');(li||el).style.display='none';});
+  }
+  document.getElementById('year').textContent=new Date().getFullYear();
+})();
+
+// header scroll
+const header=document.getElementById('header');
+window.addEventListener('scroll',()=>header.classList.toggle('scrolled',window.scrollY>30));
+
+// mobile menu
+const mt=document.getElementById('menuToggle'), nl=document.getElementById('navLinks');
+mt.addEventListener('click',()=>nl.classList.toggle('open'));
+nl.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nl.classList.remove('open')));
+
+// reveal on scroll
+const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%4*60)+'ms';io.observe(el)});
+
+// lead form -> whatsapp (עד שיחובר CRM/מייל)
+function submitLead(e){
+  e.preventDefault();
+  const f=e.target;
+  const txt=`שלום ${CONFIG.advisorName}, ליד חדש מהאתר:%0a`+
+    `שם: ${f.name.value}%0a`+
+    `טלפון: ${f.phone.value}%0a`+
+    `נושא: ${f.topic.value}%0a`+
+    `הודעה: ${f.msg.value||'-'}`;
+  window.open("https://wa.me/"+CONFIG.whatsapp+"?text="+txt,"_blank");
+  return false;
+}
+</script>
+</body>
+</html>
