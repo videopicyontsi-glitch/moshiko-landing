@@ -211,6 +211,35 @@ header.scrolled .brand .logo-mark{height:42px;width:42px}
 .step h4{font-size:1.15rem;color:var(--navy);font-weight:800;margin-bottom:8px}
 .step p{font-size:.93rem;color:var(--muted)}
 
+/* ---------- ABOUT ---------- */
+.about{padding:100px 0;background:var(--white)}
+.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start}
+.about-media{position:sticky;top:100px}
+.portrait{aspect-ratio:1/1;border-radius:26px;background:var(--grad);display:grid;place-items:center;color:#fff;font-family:Georgia,'Times New Roman',serif;font-size:3.6rem;font-weight:700;letter-spacing:.02em;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.portrait::after{content:"";position:absolute;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,.08);bottom:-70px;left:-50px}
+.creds{display:flex;flex-direction:column;gap:10px;margin-top:18px}
+.creds span{display:flex;align-items:center;gap:9px;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:12px 16px;font-weight:700;color:var(--navy);font-size:.98rem}
+.about-tag{font-size:clamp(1.1rem,2.6vw,1.42rem);font-weight:800;color:var(--steel);margin:8px 0 24px;line-height:1.4}
+.about-text p{color:var(--muted);margin-bottom:16px;font-size:1.02rem;line-height:1.78}
+.about-text p.closing{color:var(--navy);font-weight:700;font-size:1.08rem}
+
+/* ---------- TESTIMONIALS ---------- */
+.testimonials{padding:100px 0;background:linear-gradient(180deg,#f0f4fa,#fff)}
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:50px}
+.tcard{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:28px 26px;display:flex;flex-direction:column;gap:12px;transition:.32s cubic-bezier(.2,.7,.3,1)}
+.tcard:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:transparent}
+.stars{color:#f5b301;font-size:1.05rem;letter-spacing:3px}
+.ttitle{font-weight:800;color:var(--navy);font-size:1.08rem}
+.tquote{color:var(--muted);font-size:.97rem;line-height:1.7;flex:1}
+.tauthor{display:flex;align-items:center;gap:11px;font-weight:700;color:var(--navy);padding-top:14px;border-top:1px solid var(--line)}
+.tauthor .av{flex:none;width:40px;height:40px;border-radius:50%;background:var(--grad);color:#fff;display:grid;place-items:center;font-size:.92rem;font-weight:800}
+@media(max-width:960px){
+  .about-grid{grid-template-columns:1fr;gap:34px}
+  .about-media{position:static;max-width:320px}
+  .tgrid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:620px){.tgrid{grid-template-columns:1fr}}
+
 /* ---------- CTA / CONTACT ---------- */
 .contact{padding:100px 0}
 .contact-box{
@@ -311,8 +340,9 @@ footer ul a:hover{opacity:1;color:#fff}
     </a>
     <nav class="nav-links" id="navLinks">
       <a href="#services">השירותים</a>
+      <a href="#about">עליי</a>
       <a href="#why">למה אני</a>
-      <a href="#steps">איך זה עובד</a>
+      <a href="#testimonials">המלצות</a>
       <a href="#contact">צור קשר</a>
     </nav>
     <a href="#contact" class="btn btn-primary">לתיאום פגישה</a>
@@ -432,6 +462,31 @@ footer ul a:hover{opacity:1;color:#fff}
   </div>
 </section>
 
+<!-- ================= ABOUT / מי אני ================= -->
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div class="about-media reveal">
+      <div class="portrait">מ״ש</div>
+      <div class="creds">
+        <span>🛡️ סוכן ביטוח</span>
+        <span>📊 כלכלן — תואר בכלכלה ושוק ההון</span>
+        <span>🏡 יועץ משכנתאות</span>
+      </div>
+    </div>
+    <div class="about-text reveal">
+      <span class="eyebrow">מי אני</span>
+      <h2 class="title">נעים להכיר, מושיקו שחיבר</h2>
+      <p class="about-tag">ההחלטות הפיננסיות שלך. השקט הנפשי שלך. המקצועיות שלי.</p>
+      <p>אני מגיע מעולמות הביטוח, הפיננסים ושוק ההון, עם ידע מקצועי רחב והיכרות מעמיקה עם מגוון פתרונות הביטוח והפיננסים, ומתוך הבנה אמיתית של הצרכים, האתגרים והמטרות של כל לקוח.</p>
+      <p>במהלך שנות פעילותי בתחום הביטוח צברתי ניסיון וידע במגוון רחב של תחומי הביטוח, תוך היכרות עם סוגי הכיסויים, מסלולי הביטוח והפתרונות הקיימים בשוק. אני מאמין שביטוח נכון הוא הרבה מעבר לפוליסה — הוא הגנה על מה שחשוב לנו באמת: על המשפחה, על העתיד ועל הביטחון הכלכלי שלנו.</p>
+      <p>השילוב בין עולמות הביטוח, הכלכלה, שוק ההון והמשכנתאות מאפשר לי להסתכל על התמונה הפיננסית הרחבה של הלקוח, להבין את צרכיו ולסייע לו לקבל החלטות מושכלות ומותאמות אישית.</p>
+      <p>הגישה המקצועית שלי מבוססת על שירות אישי, שקיפות, זמינות והתאמה מדויקת לצורכי הלקוח. אני מאמין שכל אדם ומשפחה ראויים למעטפת מקצועית שמעניקה להם ביטחון, בהירות ושקט נפשי — לצד בחינה מתמדת של הכיסויים והפתרונות העומדים לרשותם.</p>
+      <p>המטרה שלי היא לא רק לדאוג לכם לביטוח, אלא להיות איש המקצוע שלכם לאורך הדרך — ללוות, להסביר, לבחון אפשרויות ולסייע לכם לשמור על מה שבניתם, מתוך ראייה רחבה של הצרכים הביטוחיים והפיננסיים שלכם.</p>
+      <p class="closing">כי כשמדובר בעתיד הכלכלי שלכם ושל המשפחה שלכם — מגיע לכם לדעת שאתם בידיים מקצועיות. 🤍</p>
+    </div>
+  </div>
+</section>
+
 <!-- ================= WHY ================= -->
 <section class="why" id="why">
   <div class="wrap why-grid">
@@ -479,6 +534,55 @@ footer ul a:hover{opacity:1;color:#fff}
       <div class="step reveal"><div class="num">1</div><h4>שיחת היכרות</h4><p>נשב יחד (טלפונית או פרונטלית), אבין את הצרכים והמטרות שלכם — ללא עלות וללא התחייבות.</p></div>
       <div class="step reveal"><div class="num">2</div><h4>תוכנית מותאמת</h4><p>אבנה עבורכם תמונת מצב מלאה והמלצות ברורות, עם השוואת מחירים ותנאים אמיתית.</p></div>
       <div class="step reveal"><div class="num">3</div><h4>יישום וליווי</h4><p>אטפל בכל הבירוקרטיה, ואמשיך ללוות אתכם לאורך זמן — כי החיים משתנים והתוכנית איתם.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TESTIMONIALS / המלצות ================= -->
+<section class="testimonials" id="testimonials">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">המלצות</span>
+      <h2 class="title">לקוחות מרוצים מספרים</h2>
+      <p class="lead" style="margin-top:14px">שירות מקצועי, אישי ואמין — כך זה נראה מהצד של הלקוחות.</p>
+    </div>
+    <div class="tgrid">
+      <div class="tcard reveal">
+        <div class="stars">★★★★★</div>
+        <p class="ttitle">שירות מקצועי, אישי ואמין</p>
+        <p class="tquote">"מושיקו ליווה אותי בתהליך בדיקת הביטוחים שלי, הסביר לי בצורה ברורה ומקצועית את כל האפשרויות ודאג שאבין בדיוק על מה אני משלם. שירות אישי, סבלני ומקצועי ברמה גבוהה מאוד."</p>
+        <div class="tauthor"><span class="av">דל</span>דניאל לוי</div>
+      </div>
+      <div class="tcard reveal">
+        <div class="stars">★★★★★</div>
+        <p class="ttitle">סוף סוף מישהו שרואה את הלקוח</p>
+        <p class="tquote">"אחרי שנים שבהן לא באמת הבנתי את תיק הביטוח שלי, מושיקו עשה לי סדר בכל הדברים. הוא עבר איתי על הכיסויים, הסביר מה חשוב ומה פחות רלוונטי עבורי, והעניק לי תחושת ביטחון שיש לי כתובת אמינה לפנות אליה."</p>
+        <div class="tauthor"><span class="av">אכ</span>איתי כהן</div>
+      </div>
+      <div class="tcard reveal">
+        <div class="stars">★★★★★</div>
+        <p class="ttitle">מקצועיות שחוסכת כאב ראש</p>
+        <p class="tquote">"הגעתי למושיקו בעקבות המלצה, ואני שמח מאוד שעשיתי את זה. קיבלתי יחס אישי, זמינות גבוהה והסברים ברורים לאורך כל הדרך. הרגשתי שיש מישהו שבאמת דואג לאינטרסים שלי."</p>
+        <div class="tauthor"><span class="av">רמ</span>רועי מזרחי</div>
+      </div>
+      <div class="tcard reveal">
+        <div class="stars">★★★★★</div>
+        <p class="ttitle">ליווי משכנתא וביטוח ברמה אחרת</p>
+        <p class="tquote">"מושיקו עזר לי להבין את המשמעויות של ביטוח החיים למשכנתא ולבחון את האפשרויות שעמדו בפניי. הכול נעשה בצורה מסודרת, מקצועית וסבלנית. ממליץ בחום למי שמחפש שירות אישי ואמין."</p>
+        <div class="tauthor"><span class="av">אב</span>אור בן דוד</div>
+      </div>
+      <div class="tcard reveal">
+        <div class="stars">★★★★★</div>
+        <p class="ttitle">כתובת מקצועית לכל המשפחה</p>
+        <p class="tquote">"מה שהכי אהבתי בעבודה עם מושיקו הוא היחס האישי והיכולת שלו להסתכל על התמונה הרחבה. לא הרגשתי שמנסים למכור לי משהו, אלא שמישהו באמת מקשיב לצרכים שלי ועוזר לי לקבל החלטות נכונות יותר."</p>
+        <div class="tauthor"><span class="av">מא</span>משה אברהם</div>
+      </div>
+      <div class="tcard reveal">
+        <div class="stars">★★★★★</div>
+        <p class="ttitle">שירות מכל הלב</p>
+        <p class="tquote">"מושיקו מקצוען אמיתי — זמין, אדיב וסבלני. כל שאלה קיבלה מענה, כל דבר הוסבר עד הסוף, והרגשתי שאני בידיים טובות. שירות כזה בהחלט גורם לרצות להמשיך לעבוד יחד."</p>
+        <div class="tauthor"><span class="av">אפ</span>אלעד פרץ</div>
+      </div>
     </div>
   </div>
 </section>
